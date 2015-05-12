@@ -45,7 +45,7 @@ namespace Raffle.Test
                 Description = "16GB Dourado iOS",
                 Value = 3.499m
             };
-
+             
             var raffle = new Domain.Raffle
             {
                 Id = 1,
