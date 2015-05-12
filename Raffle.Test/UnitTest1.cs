@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Raffle.Domain;
 
@@ -69,8 +70,30 @@ namespace Raffle.Test
             };
 
 
-            var sorteio = new Random();
-            var numero = sorteio.Next(1, 100);
+            var raffles = new List<Domain.Raffle>
+            {
+                raffle
+            };
+            int numero = 50;
+
+
+            if (raffles.Sum(p => p.Price) > product.Value)
+            {
+                numero = 50;
+            }
+            else
+            {
+                var sorteio = new Random();                
+                
+                 numero = sorteio.Next(1, 100);
+
+                if (raffles.Exists(p => p.NumbersOfRaffles.Contains(numero)))
+                {
+                    numero = sorteio.Next(1, 100); 
+                }
+
+            }
+            
 
         }
     }
