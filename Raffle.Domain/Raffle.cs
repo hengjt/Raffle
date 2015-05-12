@@ -12,5 +12,5 @@ namespace Raffle.Domain
 
         public int Price { get; set; }
     } 
-    } 
+    
 }

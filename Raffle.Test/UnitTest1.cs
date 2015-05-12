@@ -43,7 +43,18 @@ namespace Raffle.Test
                 Category = "Telefonia",
                 Name = "Iphone 6",
                 Description = "16GB Dourado iOS",
-                Value = 3.499m
+                Value = 3.499m,
+                Images = new List<Image>
+                {
+                    new Image
+                    {
+                        Id = 1,
+                        Name = "phone.gif",
+                        Path = @"~\Imagens/",
+                        ProductId = 1
+                    }
+                }
+
             };
              
             var raffle = new Domain.Raffle
@@ -56,6 +67,10 @@ namespace Raffle.Test
                 Price = 30,
                 Product = product
             };
+
+
+            var sorteio = new Random();
+            var numero = sorteio.Next(1, 100);
 
         }
     }
